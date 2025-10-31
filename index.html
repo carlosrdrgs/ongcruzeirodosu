@@ -3,52 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início - Mão amiga | Juntos Transformando Vidas</title>
-    <meta name="description" content="Conheça a [Nome da ONG]: nossa missão, história e como fazemos a diferença na comunidade.">
+    <title>Início - Mão Amiga | Ajuda Humanitária</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <meta name="description" content="Conheça a Mão Amiga: nossa missão, história e como levamos ajuda humanitária a quem mais precisa.">
 </head>
 <body>
     <header>
-        <h1>ONG Mão Amiga</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Seja Voluntário/Doador</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Mão Amiga</h1>
+            <nav id="nav-menu" class="nav-links">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li class="menu-item-dropdown">
+                        <a href="projetos.html">Projetos ▼</a>
+                        <ul class="submenu">
+                            <li><a href="projetos.html#projetos-em-destaque">Ações em Destaque</a></li>
+                            <li><a href="projetos.html#voluntariado">Seja Voluntário</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cadastro.html" class="btn btn-secondary">Doar/Cadastrar</a></li>
+                </ul>
+            </nav>
+            <button id="menu-hamburguer" class="menu-hamburguer" aria-label="Abrir Menu">☰</button>
+        </div>
     </header>
 
-    <main>
-        <section id="sobre" aria-labelledby="titulo-sobre">
-            <h2 id="titulo-sobre"> Nossa Missão e História</h2>
-            <article>
-                <h3>Quem Somos</h3>
-                <p>Fundada em 2025, a Mão Amiga atua no terceiro setor com foco em ajuda humanitaria. Acreditamos que a transformação social começa com a união de esforços e a dedicação de cada indivíduo.</p>
+    <main class="container">
+        <div class="layout-homepage">
+            
+            <section id="sobre" aria-labelledby="titulo-sobre">
+                <h2 id="titulo-sobre">🤝 Nossa Missão e História</h2>
+                <article>
+                    <h3>Quem Somos <span class="badge badge-projeto">Desde 2015</span></h3>
+                    <p>Fundada em 2015, a <strong>Mão Amiga</strong> atua no terceiro setor com foco em **ajuda humanitária emergencial e apoio a comunidades vulneráveis**. Acreditamos que a transformação social começa com a união de esforços e a dedicação de cada indivíduo.</p>
+                    
+                    <figure>
+                        <img src="imagens/missao-vision.jpg" alt="Equipe de voluntários trabalhando em uma atividade social" width="600" height="400">
+                        <figcaption>Nossa equipe unida em ações de emergência.</figcaption>
+                    </figure>
+                </article>
+
+                <article id="valores">
+                    <h3>Visão e Valores</h3>
+                    <p>Nossa <strong>Visão</strong> é ser referência nacional em **respostas rápidas e eficientes a crises humanitárias** até 2030. Nossos <strong>Valores</strong> incluem **Transparência**, **Ética**, **Humanidade** e **Agilidade no Impacto Social**.</p>
+                </article>
+            </section>
+
+            <section id="contato" aria-labelledby="titulo-contato">
+                <h2 id="titulo-contato">📞 Fale Conosco</h2>
+                <div class="alert alert-warning">Estamos com Plantão 24h para emergências.</div>
                 
-                <figure>
-                    <img src="imagens/missao-vision.jpg" alt="Equipe de voluntários trabalhando em uma atividade social" width="600" height="400">
-                    <figcaption>Nossa equipe unida em prol de um futuro melhor.</figcaption>
-                </figure>
-            </article>
-
-            <article id="valores">
-                <h3>Visão e Valores</h3>
-                <p>Nossa <strong>Visão</strong> é ser referência nacional em ajuda humanitaria até 2030. Nossos <strong>Valores</strong> incluem Transparência, Ética, Colaboração e Impacto Social.</p>
-            </article>
-        </section>
-
-        <section id="contato" aria-labelledby="titulo-contato">
-            <h2 id="titulo-contato"> Fale Conosco</h2>
-            <address>
-                <p><strong>Sede:</strong> Rua Exemplo, 123 - Centro, Cidade - Estado, CEP 00000-000</p>
-                <p><strong>Telefone:</strong> <a href="tel:+5511987654321">(11) 98765-4321</a></p>
-                <p><strong>E-mail:</strong> <a href="mailto:contato@ong.org">contato@ong.org</a></p>
-            </address>
-        </section>
+                <address>
+                    <p><strong>Sede:</strong> Av. Solidariedade, 456 - Bairro Central, São Paulo - SP, CEP 01000-000</p>
+                    <p><strong>Telefone:</strong> <a href="tel:+551133334444">(11) 3333-4444</a></p>
+                    <p><strong>E-mail:</strong> <a href="mailto:contato@maoamiga.org">contato@maoamiga.org</a></p>
+                </address>
+                
+                <a href="cadastro.html" class="btn btn-primary" style="margin-top: 15px;">Começar a Doar</a>
+            </section>
+            
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Mão amiga. Todos os direitos reservados. | <a href="projetos.html">Transparência</a></p>
+        <div class="container">
+            <p>&copy; 2025 Mão Amiga. Todos os direitos reservados. | <a href="projetos.html">Transparência</a></p>
+        </div>
     </footer>
+    
+    <script>
+        document.getElementById('menu-hamburguer').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
