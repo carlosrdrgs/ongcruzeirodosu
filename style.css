@@ -82,6 +82,12 @@ a {
 a:hover {
     color: var(--color-primary-dark);
 }
+
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+    outline: 3px solid var(--color-warning); 
+    outline-offset: 3px;
+}
+
 section {
     background-color: var(--color-white);
     padding: var(--space-md);
@@ -160,7 +166,8 @@ nav a:hover {
     flex-direction: column;
 }
 
-.menu-item-dropdown:hover .submenu {
+.menu-item-dropdown:hover .submenu, 
+.menu-item-dropdown:focus-within .submenu { 
     display: flex;
 }
 
@@ -316,12 +323,19 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.2);
 }
 
+/* Validação Visual */
 input:valid {
     border-left: 5px solid var(--color-success);
 }
 
 input:invalid:not(:placeholder-shown):not(:focus) {
     border-left: 5px solid var(--color-error);
+}
+
+
+.validation-feedback {
+    font-size: var(--font-size-xs);
+    margin-top: var(--space-xxs);
 }
 
 .alert {
@@ -414,4 +428,54 @@ footer {
     border-top: 1px solid #ccc;
     font-size: var(--font-size-sm);
     background-color: var(--color-white);
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-primary-dark: #3a8ff0;
+        --color-primary-base: #5fa5ec;
+        --color-primary-light: #004494; 
+        --color-secondary-dark: #6c9c6f; 
+        --color-secondary-base: #86c994; 
+        --color-neutral-dark: #f0f0f0; 
+        --color-neutral-light: #121212;
+        --color-white: #1e1e1e; 
+    }
+
+    body {
+        background-color: var(--color-neutral-light);
+        color: var(--color-neutral-dark);
+    }
+    
+    header {
+        background-color: var(--color-neutral-light);
+        border-bottom: 1px solid #444;
+    }
+    
+    nav a {
+        color: var(--color-neutral-dark);
+    }
+
+    section, .card {
+        background-color: var(--color-white);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        border: 1px solid #333;
+    }
+
+    footer {
+        background-color: var(--color-white);
+        border-top: 1px solid #333;
+    }
+    
+    .alert-success {
+        color: #c3e6cb;
+        background-color: #194a28;
+        border-color: #285e3a;
+    }
+    .alert-error {
+        color: #f5c6cb;
+        background-color: #5c1f23;
+        border-color: #722c30;
+    }
 }
