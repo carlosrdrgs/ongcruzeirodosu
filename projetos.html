@@ -11,20 +11,22 @@
     <header>
         <div class="container">
             <h1>Mão Amiga</h1>
-            <nav id="nav-menu" class="nav-links">
+            <nav id="nav-menu" class="nav-links" aria-label="Menu Principal de Navegação">
                 <ul>
                     <li><a href="index.html">Início</a></li>
                     <li class="menu-item-dropdown">
-                        <a href="projetos.html">Projetos ▼</a>
-                        <ul class="submenu">
-                            <li><a href="projetos.html#projetos-em-destaque">Ações em Destaque</a></li>
-                            <li><a href="projetos.html#voluntariado">Seja Voluntário</a></li>
+                        <a href="#" aria-expanded="false" aria-controls="submenu-projetos" id="dropdown-projetos">Projetos ▼</a>
+                        <ul id="submenu-projetos" class="submenu" role="menu">
+                            <li role="none"><a href="#projetos-em-destaque" role="menuitem">Ações em Destaque</a></li>
+                            <li role="none"><a href="#voluntariado" role="menuitem">Seja Voluntário</a></li>
                         </ul>
                     </li>
                     <li><a href="cadastro.html" class="btn btn-secondary">Doar/Cadastrar</a></li>
                 </ul>
             </nav>
-            <button id="menu-hamburguer" class="menu-hamburguer" aria-label="Abrir Menu">☰</button>
+            <button id="menu-hamburguer" class="menu-hamburguer" aria-label="Abrir e Fechar Menu Principal" aria-expanded="false" aria-controls="nav-menu">
+                <span aria-hidden="true">☰</span>
+            </button>
         </div>
     </header>
 
@@ -71,13 +73,13 @@
         </section>
         
         <section id="voluntariado" aria-labelledby="titulo-voluntariado">
-            <h2 id="titulo-voluntariado">Seja um Voluntário Humanitário</h2>
+            <h2 id="titulo-voluntariado">🙌 Seja um Voluntário Humanitário</h2>
             <p>Sua ajuda é crucial em momentos de crise. Buscamos pessoas para logística, resgate e apoio psicológico.</p>
             <p><a href="cadastro.html" class="btn btn-primary btn-lg">Cadastre-se para ser Voluntário!</a></p>
         </section>
 
         <section id="doacao" aria-labelledby="titulo-doacao">
-            <h2 id="titulo-doacao">Como Doar e Apoiar Nossas Ações</h2>
+            <h2 id="titulo-doacao">❤️ Como Doar e Apoiar Nossas Ações</h2>
             <p>Sua doação garante a compra de suprimentos vitais (água, alimentos, remédios) para respostas rápidas.</p>
             <p><a href="cadastro.html" class="btn btn-secondary btn-lg">Realizar Doação Online</a></p>
             <aside class="alert alert-success">
@@ -88,14 +90,10 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Mão Amiga. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Mão Amiga. Todos os direitos reservados. | <a href="projetos.html">Relatório de Transparência</a></p>
         </div>
     </footer>
 
-    <script>
-        document.getElementById('menu-hamburguer').addEventListener('click', function() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        });
-    </script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
